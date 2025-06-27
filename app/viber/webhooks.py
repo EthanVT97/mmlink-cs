@@ -43,7 +43,7 @@ async def handle_new_user(user_id: str):
     menu_items = await menu_manager.get_active_menu()
     await viber.send_rich_message(user_id, {
         "type": "rich_media",
-        "text": "မြန်မာလင်း၀က်ဘ်ဆိုက်မှ ကြိုဆိုပါသည်။ အောက်ပါ menu မှ ရွေးချယ်ပါ။",
+        "text": "Myanmar Link မှ ကြိုဆိုပါသည်။ အောက်ပါ menu မှ ရွေးချယ်ပါ။",
         "buttons": menu_items
     })
 
@@ -60,7 +60,7 @@ async def handle_user_message(user_id: str, data: dict):
                 await handoff.escalate_to_human(user_id, data["message_token"])
                 await viber.send_text(user_id, "ဝန်ထမ်းနှင့်ချိတ်ဆက်နေပါသည်...")
             else:
-                await viber.send_text(user_id, "ဝန်ထမ်းများ အလုပ်များနေပါသည်။ ကျေးဇူးပြု၍ နောက်မှပြန်လည်ဆက်သွယ်ပါ။")
+                await viber.send_text(user_id, "ဝန်ထမ်းများ ကိုချိတ်ဆက်ရာတွင် အခက်အခဲဖြစ်နေပါသည်။ ကျေးဇူးပြု၍ နောက်မှပြန်လည်ဆက်သွယ်ပါ။")
             return
         
         # Process normal message
